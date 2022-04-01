@@ -4,13 +4,15 @@ import Image from 'next/image'
 
 const Home: NextPage = () => {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="">
       <Head>
         <title>NFT Drop</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1 className=''>NFT Drop</h1>
     </div>
   )
 }
 
 export default Home
+
