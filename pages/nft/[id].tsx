@@ -35,10 +35,13 @@ function NFTDropPage() {
                      alt="" 
                 />
                 <h1 className='text-3xl font-bold lg:text-5xl lg:font-extrabold'>ItIzWatItIz | NFT Drop</h1>
-                <p>12/20 NFT's claimed</p>
+                <p className='pt-2 text-xl text-green-500'>12/20 NFT's claimed</p>
             </div>
 
             {/* mint button */}
+            <button className='h-16 w-full text-white rounded-full bg-rose-400 mt-10 hover:shadow-lg hover:border-none hover:text-rose-400 hover:bg-white transition duration-200 ease-out'>
+                Mint NFT (0.01 ETH)
+            </button>            
         </div>
     </div>
   )
