@@ -4,7 +4,11 @@ module.exports = {
     './components/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
-    extend: {},
+    extend: {
+      rotate: {
+        '320': '320deg',
+      }
+    },
   },
   plugins: [],
 }

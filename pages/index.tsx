@@ -16,3 +16,7 @@ const Home: NextPage = () => {
 
 export default Home
 
+// npm install disintegrate - uninstalled
+// npm install html2canvas - uninstalled
+// npm install @thirdweb-dev/react @thirdweb-dev/sdk ethers
+

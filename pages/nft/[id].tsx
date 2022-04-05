@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 function NFTDropPage() {
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
@@ -7,10 +8,10 @@ function NFTDropPage() {
         <div className="bg-gradient-to-br from-cyan-800 to-rose-500 lg:col-span-4">
             <div className="flex flex-col items-center justify-center py-2 lg:min-h-screen">
                 <div className="bg-gradient-to-br from-orange-200 to-purple-600 p-2 rounded-xl">
-                    <img className="w-44 rounded-xl object-cover lg:h-96 lg:w-72" 
-                         src="https://cdn.benzinga.com/files/images/story/2021/boredapeyachtclub_nft_image_16.png" 
-                         alt="" 
-                    />
+                    <img className="w-44 rounded-xl object-cover lg:h-96 lg:w-72 inset-0 transform hover:rotate-320 hover:translate-x-full hover:scale-150 transition duration-300" 
+                            src="https://cdn.benzinga.com/files/images/story/2021/boredapeyachtclub_nft_image_16.png" 
+                            alt=""
+                        />
                 </div>
                 <div className='text-center p-5 space-y-2'>
                     <h1 className="text-4xl font-bold text-white">NFTs</h1>
@@ -39,7 +40,7 @@ function NFTDropPage() {
             </div>
 
             {/* mint button */}
-            <button className='h-16 w-full text-white rounded-full bg-rose-400 mt-10 hover:shadow-lg hover:border-none hover:text-rose-400 hover:bg-white transition duration-200 ease-out'>
+            <button className='h-16 w-full text-white rounded-full bg-rose-400 mt-10 hover:shadow-lg hover:border-none hover:text-rose-400 hover:bg-white transition duration-200 ease-out font-bold'>
                 Mint NFT (0.01 ETH)
             </button>            
         </div>
