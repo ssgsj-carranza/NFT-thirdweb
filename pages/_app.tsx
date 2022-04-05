@@ -5,7 +5,8 @@ import { ChainId, ThirdwebProvider } from "@thirdweb-dev/react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <ThirdwebProvider desiredChainId={ChainId.Mainnet}>
+    //Rinkedby is test network for etherum
+    <ThirdwebProvider desiredChainId={ChainId.Rinkeby}>
       <Component {...pageProps} />
     </ThirdwebProvider>
   )
