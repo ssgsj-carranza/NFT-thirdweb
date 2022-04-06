@@ -14,7 +14,7 @@ const Home: NextPage = () => {
       <div className="flex h-screen bg-[url('https://www.photofunky.net/output/image/c/6/c/6/c6c6f0/photofunky.gif')] bg-cover bg-center">
         <div className="m-auto">
           <Link href='/nft/nft'>
-            <button className='font-bold rounded-full z-30 text-white px-4 py-2 hover:bg-gradient-to-br from-purple-400 to-yellow-500 hover:rounded-full hover:shadow-lg transition duration-200 ease-out'
+            <button className=' animate-bounce font-bold rounded-full z-30 text-white px-4 py-2 hover:bg-gradient-to-br from-purple-400 to-yellow-500 hover:rounded-full hover:shadow-lg transition duration-200 ease-out'
             >iizwiiz NFT Drop</button>
           </Link>
         </div>
