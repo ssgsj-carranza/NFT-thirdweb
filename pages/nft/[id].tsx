@@ -45,7 +45,7 @@ function NFTDropPage() {
             {/* content */}
             <div className='mt-10 flex flex-1 flex-col items-center space-y-6 text-center lg:space-y-0 lg:justify-center'>
                 <img className='w-80 object-cover pb-10 lg:h-45'
-                     src="https://miro.medium.com/max/930/0*iFkkT2wWwD85eVNG.png" 
+                     src="https://assets.bwbx.io/images/users/iqjWHBFdfxIU/iNdhlg_OGcdM/v1/-999x-999.gif" 
                      alt="" 
                 />
                 <h1 className='text-3xl font-bold lg:text-5xl lg:font-extrabold'>ItIzWatItIz | NFT Drop</h1>
