@@ -29,3 +29,4 @@ export default Home
 // npm install html2canvas - uninstalled
 // npm install @thirdweb-dev/react @thirdweb-dev/sdk ethers
 // npm install -g @sanity/cli
+// npm install next-sanity @sanity/image-url
