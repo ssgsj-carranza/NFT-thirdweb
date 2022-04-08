@@ -28,9 +28,4 @@ export default Home
 // npm install disintegrate - uninstalled
 // npm install html2canvas - uninstalled
 // npm install @thirdweb-dev/react @thirdweb-dev/sdk ethers
-
-{/* <div className="flex h-screen">
-<div className="m-auto">
-<h1 className='font-bold'>iizwiiz NFT Drop</h1>
-</div> */}
-// <h1 className="font-bold items-center">iizwiiz NFT Drop</h1>
+// npm install -g @sanity/cli
