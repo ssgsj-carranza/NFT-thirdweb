@@ -15,7 +15,7 @@ export default {
       type: 'string',
     },
     {
-      name: 'NFTCollectionName',
+      name: 'nftCollectionName',
       title: 'Name of NFT Collection',
       type: 'string',
     },
