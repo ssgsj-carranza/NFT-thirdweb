@@ -3,8 +3,12 @@ import Head from 'next/head'
 import {sanityClient, urlFor} from '../sanity';
 import Link from 'next/link';
 
+// describes shape of object
+interface Props {
+  colelctions: Collection[]
+}
 
-const Home = ({collections}) => {
+const Home = ({collections}: Props) => {
   return (
     <div className="">
       <Head>
