@@ -22,24 +22,25 @@ const Home = ({collections}: Props) => {
             <div>
               {collections.map((collection) => (
                 <>
-                  <div>
+                  {/* <div className='flex flex-col items-center cursor-pointer transition-all duration-200 hover:scale-105 justify-between'>
                     <img className='h-80 w-96 rounded-2xl object-cover' 
                         src={urlFor(collection.mainImage).url()}
                         alt=''
                     />
-                  </div>
+                  </div> */}
 
-                  <div>
+                  {/* <div>
                     <h2 className='text-3xl'>{collection.title}</h2>
                     <p className='mt-2 text-sm text-white'>{collection.description}</p>
-                  </div>
+                  </div> */}
+                  
+                  <Link href={`/nft/${collection.slug.current}`}>
+                    <button className='animate-bounce font-bold rounded-full z-30 text-white px-4 py-2 hover:bg-gradient-to-br from-purple-400 to-yellow-500 hover:rounded-full hover:shadow-lg transition duration-200 ease-out'
+                    >{collection.title}</button>
+                  </Link>
                 </>
               ))}
             </div>
-            <Link href='/nft/nft'>
-              <button className=' animate-bounce font-bold rounded-full z-30 text-white px-4 py-2 hover:bg-gradient-to-br from-purple-400 to-yellow-500 hover:rounded-full hover:shadow-lg transition duration-200 ease-out'
-              >iizwiiz NFT Drop</button>
-            </Link>
           </div>
         </div>
       </main>
