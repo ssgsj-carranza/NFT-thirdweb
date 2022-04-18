@@ -22,6 +22,14 @@ function NFTDropPage({collection}: Props) {
 
     useEffect(() => {
         if (!nftDrop) return;
+        
+        const fetchPrice = async () => {
+            const claimConditions
+        }
+    }, [nftDrop])
+
+    useEffect(() => {
+        if (!nftDrop) return;
 
         const fetchNFTDropData = async () => {
             setLoading(true);
@@ -96,7 +104,15 @@ function NFTDropPage({collection}: Props) {
             <button className='h-16 w-full text-white rounded-full bg-rose-400 mt-10 hover:shadow-lg hover:border-none hover:text-rose-400 hover:bg-white transition duration-200 ease-out font-bold disabled:bg-gray-400'
                     disabled={loading || claimedSupply === totalSupply?.toNumber() || !address}
             >
-                Mint NFT (0.01 ETH)
+                {loading ? (
+                    <>Loading</>
+                ): claimedSupply === totalSupply?.toNumber() ? (
+                    <>SOLD OUT</>
+                ): !address ? (
+                    <>Sign in to Mint</>
+                ): (
+                    <span className='font-bold'>Mint NFT (0.01 ETH)</span>
+                )}
             </button>            
         </div>
     </div>
