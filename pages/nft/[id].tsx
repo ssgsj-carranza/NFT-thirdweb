@@ -4,14 +4,15 @@ import type { GetServerSideProps } from 'next'
 import { sanityClient, urlFor } from '../../sanity';
 import { Collection } from '../../typings';
 import Link from 'next/link';
+import { BigNumber } from 'ethers';
 
 interface Props {
     collection: Collection
 }
 
 function NFTDropPage({collection}: Props) {
-    const [claimedSupply, setClaimedSupply] = useState<Number>(0);
-    const [totalSupply, setTotalSupply] = useState<Number>(0);
+    const [claimedSupply, setClaimedSupply] = useState<number>(0);
+    const [totalSupply, setTotalSupply] = useState<BigNumber>();
     const nftDrop = useNFTDrop(collection.address);
     //AUTH
     const connectWithMetamask = useMetamask();
@@ -19,8 +20,17 @@ function NFTDropPage({collection}: Props) {
     const disconnect = useDisconnect();
 
     useEffect(() => {
+        if (!nftDrop) return;
 
-    }, [])
+        const fetchNFTDropData = async () => {
+            const claimed = await nftDrop.getAllClaimed();
+            const total = await nftDrop.totalSupply();
+
+            setClaimedSupply(claimed.length);
+            setTotalSupply(total);
+        }
+        fetchNFTDropData();
+    }, [nftDrop])
 
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
