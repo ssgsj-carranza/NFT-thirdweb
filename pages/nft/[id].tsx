@@ -47,6 +47,15 @@ function NFTDropPage({collection}: Props) {
         fetchNFTDropData();
     }, [nftDrop])
 
+    const mintNft = () => {
+        if (!nftDrop || !address) return;
+        const quantity = 1; //how many unique nfts to claim
+
+        nftDrop.claimTo(address, quantity).then(async(tx) => {
+            
+        })
+    }
+
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
         {/* left side */}
@@ -104,7 +113,8 @@ function NFTDropPage({collection}: Props) {
                 )}
             </div>
             {/* mint button */}
-            <button className='h-16 w-full text-white rounded-full bg-rose-400 mt-10 hover:shadow-lg hover:border-none hover:text-rose-400 hover:bg-white transition duration-200 ease-out font-bold disabled:bg-gray-400'
+            <button onClick={mintNft}
+                    className='h-16 w-full text-white rounded-full bg-rose-400 mt-10 hover:shadow-lg hover:border-none hover:text-rose-400 hover:bg-white transition duration-200 ease-out font-bold disabled:bg-gray-400'
                     disabled={loading || claimedSupply === totalSupply?.toNumber() || !address}
             >
                 {loading ? (
