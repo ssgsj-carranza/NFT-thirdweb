@@ -50,9 +50,20 @@ function NFTDropPage({collection}: Props) {
     const mintNft = () => {
         if (!nftDrop || !address) return;
         const quantity = 1; //how many unique nfts to claim
+        setLoading(true);
 
         nftDrop.claimTo(address, quantity).then(async(tx) => {
-            
+            const receipt = tx[0].receipt
+            const claimedTokenId = tx[0].id
+            const claimedNFT = await tx[0].data()
+
+            console.log(receipt);
+            console.log(claimedTokenId);
+            console.log(claimedNFT);
+        }).catch((err) => {
+            console.log(err)
+        }).finally(() => {
+            setLoading(false);
         })
     }
 
