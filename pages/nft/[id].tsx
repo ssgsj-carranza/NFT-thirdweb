@@ -84,9 +84,18 @@ function NFTDropPage({collection}: Props) {
                 ):(
                     <p className='pt-2 text-xl text-green-500'>{claimedSupply}/{totalSupply?.toString()} NFT's claimed</p>
                 )}
+
+                {loading && (
+                    <img className='h-80 w-80 object-contain'
+                         src='https://cdn.hackernoon.com/images/0*4Gzjgh9Y7Gu8KEtZ.gif' 
+                         alt=''
+                    />
+                )}
             </div>
             {/* mint button */}
-            <button className='h-16 w-full text-white rounded-full bg-rose-400 mt-10 hover:shadow-lg hover:border-none hover:text-rose-400 hover:bg-white transition duration-200 ease-out font-bold'>
+            <button className='h-16 w-full text-white rounded-full bg-rose-400 mt-10 hover:shadow-lg hover:border-none hover:text-rose-400 hover:bg-white transition duration-200 ease-out font-bold disabled:bg-gray-400'
+                    disabled={loading || claimedSupply === totalSupply?.toNumber() || !address}
+            >
                 Mint NFT (0.01 ETH)
             </button>            
         </div>
