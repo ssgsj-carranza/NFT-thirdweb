@@ -48,7 +48,7 @@ const Home = ({collections}: Props) => {
   )
 }
 
-export default Home
+export default Home;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const query = `*[_type == 'collection']{
@@ -91,4 +91,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
 // npm install @thirdweb-dev/react @thirdweb-dev/sdk ethers
 // npm install -g @sanity/cli
 // npm install next-sanity @sanity/image-url
-//
+
