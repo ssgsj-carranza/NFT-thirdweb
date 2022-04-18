@@ -15,6 +15,7 @@ function NFTDropPage({collection}: Props) {
     const [totalSupply, setTotalSupply] = useState<BigNumber>();
     const nftDrop = useNFTDrop(collection.address);
     const [loading, setLoading] = useState<boolean>(true);
+    const [priceInEth, setPriceInEth] = useState<string>();
     //AUTH
     const connectWithMetamask = useMetamask();
     const address = useAddress();
@@ -24,8 +25,10 @@ function NFTDropPage({collection}: Props) {
         if (!nftDrop) return;
         
         const fetchPrice = async () => {
-            const claimConditions
+            const claimConditions = await nftDrop.claimConditions.getAll();
+            setPriceInEth(claimConditions?.[0].currencyMetadata.displayValue);
         }
+        fetchPrice();
     }, [nftDrop])
 
     useEffect(() => {
@@ -111,7 +114,7 @@ function NFTDropPage({collection}: Props) {
                 ): !address ? (
                     <>Sign in to Mint</>
                 ): (
-                    <span className='font-bold'>Mint NFT (0.01 ETH)</span>
+                    <span className='font-bold'>Mint NFT ({priceInEth} ETH)</span>
                 )}
             </button>            
         </div>
