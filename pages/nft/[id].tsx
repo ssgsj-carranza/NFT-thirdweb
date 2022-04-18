@@ -14,6 +14,7 @@ function NFTDropPage({collection}: Props) {
     const [claimedSupply, setClaimedSupply] = useState<number>(0);
     const [totalSupply, setTotalSupply] = useState<BigNumber>();
     const nftDrop = useNFTDrop(collection.address);
+    const [loading, setLoading] = useState<boolean>(true);
     //AUTH
     const connectWithMetamask = useMetamask();
     const address = useAddress();
@@ -23,11 +24,14 @@ function NFTDropPage({collection}: Props) {
         if (!nftDrop) return;
 
         const fetchNFTDropData = async () => {
+            setLoading(true);
+
             const claimed = await nftDrop.getAllClaimed();
             const total = await nftDrop.totalSupply();
 
             setClaimedSupply(claimed.length);
             setTotalSupply(total);
+            setLoading(false);
         }
         fetchNFTDropData();
     }, [nftDrop])
@@ -75,9 +79,12 @@ function NFTDropPage({collection}: Props) {
                      alt="" 
                 />
                 <h1 className='text-3xl font-bold lg:text-5xl lg:font-extrabold'>{collection.title}</h1>
-                <p className='pt-2 text-xl text-green-500'>12/20 NFT's claimed</p>
+                {loading ? (
+                    <p className='pt-2 text-xl text-green-500 animate-pulse'>Loading Collection supply count.....</p>
+                ):(
+                    <p className='pt-2 text-xl text-green-500'>{claimedSupply}/{totalSupply?.toString()} NFT's claimed</p>
+                )}
             </div>
-
             {/* mint button */}
             <button className='h-16 w-full text-white rounded-full bg-rose-400 mt-10 hover:shadow-lg hover:border-none hover:text-rose-400 hover:bg-white transition duration-200 ease-out font-bold'>
                 Mint NFT (0.01 ETH)
