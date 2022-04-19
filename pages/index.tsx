@@ -92,4 +92,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
 // npm install -g @sanity/cli
 // npm install next-sanity @sanity/image-url
 // npm install  react-hot-toast
+// npm install --save-dev tailwindcss-visuallyhidden
 
