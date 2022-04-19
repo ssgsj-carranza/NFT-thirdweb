@@ -51,20 +51,51 @@ function NFTDropPage({collection}: Props) {
     const mintNft = () => {
         if (!nftDrop || !address) return;
         const quantity = 1; //how many unique nfts to claim
+        
         setLoading(true);
+        const notification = toast.loading('Minting...', {
+            style: {
+                background: 'white',
+                color: 'green',
+                fontWeight: 'bolder',
+                fontSize: '17px',
+                padding: '20px',
+            }
+        })
 
         nftDrop.claimTo(address, quantity).then(async(tx) => {
             const receipt = tx[0].receipt
             const claimedTokenId = tx[0].id
             const claimedNFT = await tx[0].data()
 
+            toast('YAYY.. NFT succesfully minted', {
+                duration: 8000,
+                style: {
+                    background: 'white',
+                    color: 'green',
+                    fontWeight: 'bolder',
+                    fontSize: '17px',
+                    padding: '20px',
+                }
+            })
+
             console.log(receipt);
             console.log(claimedTokenId);
             console.log(claimedNFT);
         }).catch((err) => {
             console.log(err)
+            toast('Whoops... Something went wrong', {
+                style: {
+                    background: 'red',
+                    color: 'white',
+                    fontWeight: 'bolder',
+                    fontSize: '17px',
+                    padding: '20px',
+                }
+            })
         }).finally(() => {
             setLoading(false);
+            toast.dismiss(notification);
         })
     }
 
