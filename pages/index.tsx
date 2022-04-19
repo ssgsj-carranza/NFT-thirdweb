@@ -91,4 +91,5 @@ export const getServerSideProps: GetServerSideProps = async () => {
 // npm install @thirdweb-dev/react @thirdweb-dev/sdk ethers
 // npm install -g @sanity/cli
 // npm install next-sanity @sanity/image-url
+// npm install  react-hot-toast
 

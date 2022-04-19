@@ -5,6 +5,7 @@ import { sanityClient, urlFor } from '../../sanity';
 import { Collection } from '../../typings';
 import Link from 'next/link';
 import { BigNumber } from 'ethers';
+import toast, {Toaster} from 'react-hot-toast';
 
 interface Props {
     collection: Collection
@@ -69,6 +70,7 @@ function NFTDropPage({collection}: Props) {
 
   return (
     <div className="flex h-screen flex-col lg:grid lg:grid-cols-10">
+        <Toaster position='bottom-center' />
         {/* left side */}
         <div className="bg-gradient-to-br from-cyan-800 to-rose-500 lg:col-span-4">
             <div className="flex flex-col items-center justify-center py-2 lg:min-h-screen">
