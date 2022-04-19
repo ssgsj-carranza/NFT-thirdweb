@@ -35,7 +35,7 @@ const Home = ({collections}: Props) => {
                   </div> */}
                   
                   <Link href={`/nft/${collection.slug.current}`}>
-                    <button className='animate-bounce font-bold rounded-full z-30 text-white px-4 py-2 hover:bg-gradient-to-br from-purple-400 to-yellow-500 hover:rounded-full hover:shadow-lg transition duration-200 ease-out'
+                    <button className='animate-bounce font-bold rounded-full z-30 text-white px-4 py-2 hover:bg-gradient-to-br from-purple-400 via-gray-800 to-purple-400 hover:rounded-full hover:shadow-lg transition duration-200 ease-out'
                     >{collection.title}</button>
                   </Link>
                 </>

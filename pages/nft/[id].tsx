@@ -158,7 +158,7 @@ function NFTDropPage({collection}: Props) {
             </div>
             {/* mint button */}
             <button onClick={mintNft}
-                    className='h-16 w-full text-white rounded-full bg-gradient-to-br from-black via-purple-900 to-black mt-10 hover:shadow-lg hover:border-none hover:scale-105 transition duration-200 ease-out font-bold disabled:bg-gray-400'
+                    className='h-16 w-full text-white rounded-full bg-gradient-to-br from-black via-purple-900 to-black mt-10 hover:shadow-lg hover:hue-rotate-60 hover:border-none hover:scale-75 transition duration-200 ease-out font-bold disabled:bg-gray-400'
                     disabled={loading || claimedSupply === totalSupply?.toNumber() || !address}
             >
                 {loading ? (
